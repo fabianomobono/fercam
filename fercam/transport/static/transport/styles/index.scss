@@ -1,0 +1,24 @@
+@import 'base';
+
+
+
+.c_dark {
+  background-color: $color6;
+  @extend %shadow;
+  .slide_text {
+    margin: 5%;
+    padding: 5%;
+    display: block;
+    float: left;
+    color: white;
+    width: 40%;
+    font-weight: bold;
+  }
+  img{
+    height: 450px;
+  }
+
+  .c_image {
+    float: right;
+  }
+}

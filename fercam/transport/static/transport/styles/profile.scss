@@ -1,0 +1,63 @@
+@import 'base';
+
+
+.main_profile_div{
+  float: left;
+  padding: 5%;
+  box-sizing: border-box;
+  color: white;
+  background-color: $color6;
+  width: 80%;
+  margin: 10%;
+  @extend %shadow;
+  .profile_picture_div{
+    float: left;
+    width: 50%;
+    #profile_picture{
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 5% 5% 5% 25%;
+      @extend %shadow;
+    }
+    a{
+      margin-left: 5%;
+      font-size: 30px;
+      font-weight: bolder;
+      color: white;
+      padding: 5%;
+    }
+    a:hover{
+      opacity: 0.7;
+    }
+  }
+  .user_info_div{
+    width: 50%;
+    margin-right: 0px;
+    float: left;
+    ul{
+      li{
+        margin: 7%;
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .profile_orders_div {
+    float: left;
+    width: 100%;
+    ul {
+      li {
+        margin: 5%;
+        font-weight: bolder;
+      }
+      hr{
+        height: 2px;
+        background: silver;
+        width: 95%;
+      }
+    }
+  }
+}

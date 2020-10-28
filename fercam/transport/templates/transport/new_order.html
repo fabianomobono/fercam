@@ -1,0 +1,87 @@
+{% extends "transport/layout.html" %}
+
+{% block title %}
+  New Order
+{% endblock %}
+
+{% block body %}
+  <h1 class="headline1">Request a new order</h1>
+  <form class="place_new_order_form" action="{% url 'order' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1>Tell us about the transport</h1>
+    <h1>{{message}}</h1>
+    <hr>
+    <h3>How big and heavy is the cargo?</h3>
+    <div class="size_and_weight">
+      <label for="weight_input">Weight in kilograms</label>
+      <input id="weight_input" type="number" name="weight" value="0" placeholder="Weight" step="0.01" min='0' required  >
+      <label for="size_input">Size in cubic meters</label>
+      <input id="size_input" type="number" name="size" value="0" placeholder="Size" step="0.01" min='0' required>
+      <label id="label_for_description" for="item_description">Tell us a little about what you're transporting</label><br>
+      <textarea id="item_description" name="description" rows="8" cols="80" placeholder="Describe items to transport" required></textarea>
+
+    </div>
+    <h3>You know what? It's probably best you upload some pictures of the cargo we are goint to move for you...</h3>
+    <div class="image_upload_div">
+      <p><label for="image_upload">Upload Images</label></p>
+      <input type="file" id="image_upload" onchange="loadFile(event)" accept="image/gif, image/jpeg, image/png" name="order_pictures" multiple>
+      <div class="order_images">
+
+      </div>
+    </div>
+    <h3>Is the shipment crossing borders?</h3>
+    <div class="international_or_not_div">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" name="scopes" class="custom-control-input" value="international" required>
+        <label class="custom-control-label" for="customRadio1">International Transport</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" name="scopes" class="custom-control-input" value="national" required>
+        <label class="custom-control-label" for="customRadio2">National Transport</label>
+      </div>
+      </div>
+      <h3>When do you need us to pick the cargo up?</h3>
+      <div class="order_date">
+        <input id="order_date" type="date" name="order_date" value="" required>
+      </div>
+      <div>
+        <h3>This is pretty important...where do we pick the cargo up? Where do we drop it off?</h3>
+        <div class="map_inputs">
+          <input id="origin_input" type="text" name="origin" value="" placeholder="Origin" required>
+          <button id="location_origin" onclick="getLocation(this)" type="button" class='btn' name="button"><i class="fa fa-map-marker"></i></button>
+          <br>
+          <input id="destination_input" type="text" name="destination" value="" placeholder="Destination" required>
+          <button id="location_destination" onclick="getLocation(this)" type="button" class='btn' name="button"><i class="fa fa-map-marker"></i></button>
+          <br>
+          <button id="calculate_path_button" class="btn btn-primary" type="button" name="button" onclick="calculate_path()">Calculate Path and Price</button>
+        </div>
+        <div class="loader"></div>
+        <div class="results">
+          <p id="path_error_message"></p>
+          <p>Origin: <span id="span_origin"></span></p>
+          <p>Destination: <span id="span_destination"></span></p>
+          <p>Distance: <span id="span_distance"></span></p>
+          <p>Duration: <span id="span_duration"></span></p>
+          <p>Price: <span id="span_price"></span></p>
+          <input id="distance_value" type="number" name="distance" value="" readonly>
+          <input id="duration_value" type="number" name="duration" value="" readonly>
+          <input id="price_value" type="number" name="price" value="" step='0.01' readonly>
+          <input id="origin_input_submit" type="text" name="origin_input_submit" value="" readonly>
+          <input id="destination_input_submit" type="text" name="destination_input_submit" value="" readonly>
+        </div>
+
+      </div>
+      <div class="map">
+
+      </div>
+
+    <button id="submit_order_button"  class="btn btn-primary" type="submit" name="button" disabled>You must calculate path and price before you place your order</button>
+  </form>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUSMxy8LIGpoatBaUKRSICiRNWEPPTHhE&libraries=places&callback=activatePlacesSearch">
+  </script>
+
+
+
+{% endblock %}

@@ -1,0 +1,1137 @@
+.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+.c_dark {
+  background-color: rgba(51, 51, 51, 0.4);
+}
+.c_dark .slide_text {
+  margin: 5%;
+  padding: 5%;
+  display: block;
+  float: left;
+  color: white;
+  width: 40%;
+  font-weight: bold;
+}
+.c_dark img {
+  height: 450px;
+}
+.c_dark .c_image {
+  float: right;
+}
+
+@keyframes example {
+  from {
+    color: white;
+  }
+  to {
+    color: green;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* element to apply this animation to */
+#service_ul a, #service_ul_2 a, #service_ul_3 a {
+  animation-name: pass;
+  animation-duration: 4s;
+}
+
+.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+/* register studd */
+.sign_up_form {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  right: 250px;
+  top: 68px;
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 25%;
+}
+.sign_up_form button, .sign_up_form input {
+  padding: 10px;
+  display: block;
+  margin: auto;
+  margin-bottom: 7%;
+  text-align: center;
+  color: white;
+  width: 80%;
+  color: black;
+}
+.sign_up_form h3 {
+  color: white;
+  text-align: center;
+}
+
+/* Login dropdown */
+.login_form {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 68px;
+  display: none;
+  float: right;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+.login_form > * {
+  display: block;
+  margin: 1em;
+  text-align: center;
+  padding: 3%;
+  font-size: 16px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+#login_button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+/* info div's */
+#company_div, #sectors_div, #why_fercam_div, #service_div {
+  position: absolute;
+  display: none;
+  background: rgba(51, 51, 51, 0.4);
+  z-index: 1;
+  top: 68px;
+  color: white;
+  width: 100%;
+}
+
+#service_ul {
+  float: left;
+  padding: 0px;
+}
+
+#service_ul_2 {
+  float: left;
+  padding: 0px;
+}
+
+#service_ul_3 {
+  float: left;
+  padding: 0px;
+}
+
+#service_ul a, #service_ul_2 a, #service_ul_3 a {
+  display: block;
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+  padding: 10px;
+}
+
+#login_service_link:hover, #login_sectors_link:hover, #login_company_link:hover, #login_why_fercam_link:hover, a:hover {
+  text-shadow: 0px -2px 0px black, 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+}
+
+.underliner {
+  position: inherit;
+  top: 35px;
+  height: 0.25rem;
+  width: 4.5%;
+  margin-left: 7.5%;
+  background: rgba(192, 192, 192, 0.5);
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+#login_sectors_link:hover ~ .underliner {
+  margin-left: 30%;
+}
+
+#login_company_link:hover ~ .underliner {
+  margin-left: 53%;
+}
+
+#login_why_fercam_link:hover ~ .underliner {
+  margin-left: 74.3%;
+  width: 7.5%;
+}
+
+.navbarr {
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+.li, .ul, .one, .two, .three, .four, .register_li, #login_li, #logout_li {
+  display: inline;
+  text-align: center;
+}
+
+#login_li, #logout_li {
+  float: right;
+}
+
+.navbarr ul li a, .home_navbar ul li a {
+  display: inline-block;
+  width: 15%;
+  padding: 0.75rem 0;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.one:hover ~ .underline {
+  margin-left: 5%;
+  height: 0.25rem;
+  display: block;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+.two:hover ~ .underline {
+  margin-left: 20%;
+  height: 0.25rem;
+  display: block;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+.three:hover ~ .underline {
+  margin-left: 35%;
+  height: 0.25rem;
+  display: block;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+.four:hover ~ .underline {
+  margin-left: 50%;
+  height: 0.25rem;
+  display: block;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+.underline {
+  height: 0.25rem;
+  width: 5%;
+  margin: 0;
+  margin-left: 5%;
+  color: rgba(255, 255, 255, 0);
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+@keyframes example {
+  from {
+    color: white;
+  }
+  to {
+    color: green;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* element to apply this animation to */
+#service_ul a, #service_ul_2 a, #service_ul_3 a {
+  animation-name: pass;
+  animation-duration: 4s;
+}
+
+.place_new_order_form {
+  border: 1px solid grey;
+  background-color: rgba(34, 34, 34, 0.6);
+  padding: 20px;
+  color: white;
+  width: 85%;
+  margin: auto;
+}
+.place_new_order_form h1 {
+  text-align: center;
+}
+.place_new_order_form select, .place_new_order_form .order_images, .place_new_order_form .image_upload_div, .place_new_order_form .progress_div, .place_new_order_form .international_or_not_div, .place_new_order_form .custom-control, .place_new_order_form .custom-radio, .place_new_order_form .size_and_weight, .place_new_order_form .order_date, .place_new_order_form p, .place_new_order_form .map, .place_new_order_form button[type=submit] {
+  margin: 1%;
+  display: block;
+}
+.place_new_order_form select input[type=number], .place_new_order_form select input[type=date], .place_new_order_form select textarea, .place_new_order_form .order_images input[type=number], .place_new_order_form .order_images input[type=date], .place_new_order_form .order_images textarea, .place_new_order_form .image_upload_div input[type=number], .place_new_order_form .image_upload_div input[type=date], .place_new_order_form .image_upload_div textarea, .place_new_order_form .progress_div input[type=number], .place_new_order_form .progress_div input[type=date], .place_new_order_form .progress_div textarea, .place_new_order_form .international_or_not_div input[type=number], .place_new_order_form .international_or_not_div input[type=date], .place_new_order_form .international_or_not_div textarea, .place_new_order_form .custom-control input[type=number], .place_new_order_form .custom-control input[type=date], .place_new_order_form .custom-control textarea, .place_new_order_form .custom-radio input[type=number], .place_new_order_form .custom-radio input[type=date], .place_new_order_form .custom-radio textarea, .place_new_order_form .size_and_weight input[type=number], .place_new_order_form .size_and_weight input[type=date], .place_new_order_form .size_and_weight textarea, .place_new_order_form .order_date input[type=number], .place_new_order_form .order_date input[type=date], .place_new_order_form .order_date textarea, .place_new_order_form p input[type=number], .place_new_order_form p input[type=date], .place_new_order_form p textarea, .place_new_order_form .map input[type=number], .place_new_order_form .map input[type=date], .place_new_order_form .map textarea, .place_new_order_form button[type=submit] input[type=number], .place_new_order_form button[type=submit] input[type=date], .place_new_order_form button[type=submit] textarea {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.place_new_order_form .image_upload_div input {
+  display: none;
+}
+.place_new_order_form .image_upload_div p label {
+  font-weight: bold;
+  cursor: pointer;
+}
+.place_new_order_form .image_upload_div p label:hover {
+  text-decoration: underline;
+}
+.place_new_order_form .order_images img {
+  margin: 2%;
+}
+.place_new_order_form #calculating {
+  display: none;
+}
+
+.custom-control * {
+  margin-top: 1%;
+}
+
+.international_or_not_div {
+  border: 1px solid white;
+  padding: 1%;
+  width: 20%;
+}
+
+.map {
+  border: 2px solid silver;
+  width: 50%;
+  height: 400px;
+}
+
+.map_inputs {
+  margin: 1%;
+}
+.map_inputs button:hover {
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+}
+.map_inputs input {
+  width: 90%;
+  margin-bottom: 1%;
+  padding: 1%;
+}
+
+#path_error_message {
+  display: none;
+}
+
+#distance_value, #duration_value, #price_value, #origin_input_submit, #destination_input_submit {
+  display: none;
+}
+
+.loader {
+  margin: 1%;
+  display: none;
+  border: 4px solid #f3f3f3;
+  /* Light grey */
+  border-top: 4px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+.results {
+  border: 2px solid silver;
+  font-weight: bold;
+  margin: 1%;
+}
+
+.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+.main_profile_div {
+  float: left;
+  padding: 5%;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 80%;
+  margin: 10%;
+}
+.main_profile_div .profile_picture_div {
+  float: left;
+  width: 50%;
+}
+.main_profile_div .profile_picture_div #profile_picture {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 5% 5% 5% 25%;
+}
+.main_profile_div .profile_picture_div a {
+  margin-left: 5%;
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  padding: 5%;
+}
+.main_profile_div .profile_picture_div a:hover {
+  opacity: 0.7;
+}
+.main_profile_div .user_info_div {
+  width: 50%;
+  margin-right: 0px;
+  float: left;
+}
+.main_profile_div .user_info_div ul li {
+  margin: 7%;
+}
+.main_profile_div .user_info_div ul li span {
+  font-weight: bold;
+}
+.main_profile_div .profile_orders_div {
+  float: left;
+  width: 100%;
+}
+.main_profile_div .profile_orders_div ul li {
+  margin: 5%;
+  font-weight: bolder;
+}
+.main_profile_div .profile_orders_div ul hr {
+  height: 2px;
+  background: silver;
+  width: 95%;
+}
+
+.details_images, .c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+.order_table {
+  margin: auto;
+  width: 50%;
+}
+.order_table tr td, .order_table tr th {
+  padding: 20px;
+}
+
+.details_images {
+  margin: auto;
+  width: 50%;
+  color: white;
+  background-color: rgba(51, 51, 51, 0.4);
+}
+.details_images img {
+  margin: 1%;
+}
+
+.c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture, .details_images {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+}
+
+.test {
+  background-color: magenta;
+}
+
+.game {
+  background-color: rgba(51, 51, 51, 0.4);
+}
+.game .game-board {
+  margin: auto;
+  width: auto;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

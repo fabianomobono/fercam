@@ -1,0 +1,22 @@
+@import 'base';
+
+.order_table {
+  margin: auto;
+  width: 50%;
+  tr {
+    td, th {
+      padding: 20px;
+    }
+  }
+}
+
+.details_images {
+  margin: auto;
+  width: 50%;
+  color: white;
+  @extend %shadow;
+  background-color: $color6;
+  img{
+    margin: 1%;
+  }
+}

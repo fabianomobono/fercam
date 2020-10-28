@@ -1,0 +1,18 @@
+@import 'base';
+
+
+.test {
+  background-color: magenta;
+
+}
+
+.game {
+  background-color: $color6;
+
+
+  .game-board {
+    margin: auto;
+    width: auto;
+    text-align: center;
+  }
+}

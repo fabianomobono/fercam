@@ -1,0 +1,104 @@
+$color3: silver;
+$color4: rgba(black, 0.6);
+$color5: rgba(169, 169,169, 0.1);
+$color6: rgba(#333, 0.4);
+$button_color: powderblue;
+$color:  rgba(#333, 0.4);
+$color2: Dodgerblue;
+$formcolor: rgba(#222, 0.6);
+
+%shadow{
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+%white_border{
+  border: 2px solid white;
+}
+
+.greeting {
+  text-align: center;
+}
+h1{
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body{
+  background-image: url('/static/transport/pictures/roads.jpg');
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+.headline1{
+  text-align: center;
+}
+/*main div */
+.main{
+
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+/* Navbar container */
+.dropbtn{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+.dropdown{
+  display: inline-block;
+    z-index: 1;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+  background-color: $color6;
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+}
+.dropdown-content a{
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+/* Login dropdown */
+.vertical_line_left{
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left
+}
+.vertical_line_right{
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+.message{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: $color6;
+  color: white;
+  z-index: 1;
+}
+.logout_div{
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+.home_navbar{
+  background-color: $color6;
+  width: 100%;
+
+}

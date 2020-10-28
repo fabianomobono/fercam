@@ -1,0 +1,17 @@
+@keyframes example{
+  from{color: white;}
+  to {color:green;}
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* element to apply this animation to */
+#service_ul a, #service_ul_2 a, #service_ul_3 a
+{
+  animation-name: pass;
+  animation-duration: 4s;
+}

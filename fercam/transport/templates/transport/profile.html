@@ -1,0 +1,63 @@
+{% extends 'transport/layout.html' %}
+
+{% load static %}
+{% block title %}
+  {{user}}'s Profile
+{% endblock %}
+
+{% block head %}
+  <script src="{% static 'javascript/profile.js' %}">
+  </script>
+{% endblock %}
+
+{% block body %}
+  <h1>This is {{user}}'s  Profile page</h1>
+  <div class="main_profile_div">
+    <div class="profile_picture_div">
+      <img id="profile_picture" src="/static/transport/profile_pictures/Turtle_2.jpg" alt="Turtle">
+      <a href="https://www.google.com"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.facebook.com/{{user.first_name}}.{{user.last_name}}/"><i class="fa fa-facebook"></i></a>
+      <a href="/order/1"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-quora"></i></a>
+    </div>
+    <div class="user_info_div">
+      <h1>{{user}}'s Info</h1>
+      <ul>
+        <li>First Name: <span>{{user.first_name}}</span></li>
+        <li>Last Name: <span>{{user.last_name}}</span></li>
+        <li>Email: <span>{{user.email}}</span></li>
+      </ul>
+
+    </div>
+    <div class="profile_orders_div">
+      {% if orders %}
+        <h1>Your Orders</h1>
+        <table class="table table-dark table-striped table-bordered table-hover">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Date</th>
+            <th scope="col">Price</th>
+            <th scope="col">More Details</th>
+          </tr>
+          <tbody>
+            {% for order in orders %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{order.origin}}</td>
+                <td>{{order.destination}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.price}}</td>
+                <td><a href="/order_detail/{{order.id}}">More</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        {% else %}
+          You haven't places any orders yet!
+        {% endif %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'transport/layout.html' %}
+{% load static %}
+{% block title %}
+  Home
+{% endblock %}
+
+{% block body %}
+  <h1>Hello {{user}}</h1>
+
+</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+</ol>
+<div id='carousel-pic' class="carousel-inner">
+  <div class="carousel-item active c_dark">
+    <img  class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_1.jpg' %}" alt="First slide">
+    <div class="slide_text">
+      <p>We have an amazing team ready to work for you and answer all of your questions regarding your transport.</p>
+      <br>
+      <p>Our 24h customer service can assist you at any time. Call <a href="tel:+1 917-573-1234">+1 917-573-1234</a> for information</p>
+    </div>
+  </div>
+  <div class="carousel-item c_dark">
+    <img class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_2.jpg' %}" alt="Second slide">
+    <div class="slide_text">
+      <p>We have an amazing team ready to work for you and answer all of your questions regarding your transport.</p>
+      <br>
+      <p>Our 24h customer service can assist you at any time. Call <a href="tel:+1 917-573-1234">+1 917-573-1234</a> for information</p>
+    </div>
+  </div>
+  <div class="carousel-item c_dark">
+    <img class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_3.jpg' %}" alt="Third slide">
+    <div class="slide_text">
+      <p>We have an amazing team ready to work for you and answer all of your questions regarding your transport.</p>
+      <br>
+      <p>Our 24h customer service can assist you at any time. Call <a href="tel:+1 917-573-1234">+1 917-573-1234</a> for information</p>
+    </div>
+  </div>
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,163 @@
+@import 'base';
+
+/* register studd */
+.sign_up_form{
+  position: absolute;
+  display: none;
+  z-index: 1;
+  right: 250px;
+  top: 68px;
+  background-color: $color6;
+  width: 25%;
+
+  button, input{
+    padding: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 7%;
+    text-align: center;
+    color: white;
+    width: 80%;
+    color: black;
+  }
+  h3{
+    color: white;
+    text-align: center;
+  }
+}
+/* Login dropdown */
+.login_form{
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 68px;
+  display: none;
+  float: right;
+  margin: auto;
+  padding: 20px;
+  background-color: $color6;
+}
+.login_form > *{
+  display: block;
+  margin: 1em;
+  text-align: center;
+  padding: 3%;
+  font-size: 16px;
+  width: 90%;
+  box-sizing: border-box;
+}
+#login_button{
+  background-color: $color4;
+  color: white;
+}
+/* info div's */
+#company_div, #sectors_div, #why_fercam_div, #service_div{
+  position: absolute;
+  display: none;
+  background: $color6;
+  z-index: 1;
+  top: 68px;
+  color: white;
+  width: 100%;
+}
+#service_ul{
+  float: left;
+  padding: 0px;
+}
+#service_ul_2{
+  float: left;
+  padding: 0px;
+}
+#service_ul_3{
+  float: left;
+  padding: 0px;
+}
+#service_ul a, #service_ul_2 a, #service_ul_3 a{
+  display: block;
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+  padding: 10px;
+}
+#login_service_link, #login_sectors_link, #login_company_link, #login_why_fercam_link, a{
+  &:hover{
+    text-shadow: 0px -2px 0px rgba(0,0,0,1), 0 0 5px rgba(255,255,255,0.8),0 -4px 15px rgba(255,255,255,0.5);
+  }
+}
+.underliner{
+  position: inherit;
+  top: 35px;
+  height: .25rem;
+  width: 4.5%;
+  margin-left: 7.5%;
+  background: rgba(silver, 0.5);
+  border: none;
+  transition: .3s ease-in-out;
+}
+#login_sectors_link:hover ~ .underliner {
+  margin-left: 30%;
+}
+#login_company_link:hover ~ .underliner {
+  margin-left: 53%;
+}
+#login_why_fercam_link:hover ~ .underliner{
+  margin-left: 74.3%;
+  width: 7.5%;
+}
+.navbarr {
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $color6
+}
+.li, .ul, .one, .two, .three, .four, .register_li, #login_li, #logout_li{
+  display: inline;
+  text-align: center;
+}
+#login_li, #logout_li{
+  float: right;
+}
+.navbarr ul li a, .home_navbar ul li a {
+  display: inline-block;
+  width: 15%;
+  padding: .75rem 0;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+}
+.one:hover ~ .underline {
+  margin-left: 5%;
+  height: .25rem;
+  display: block;
+  background: rgba(silver, 0.5);
+}
+.two:hover ~ .underline {
+  margin-left: 20%;
+  height: .25rem;
+  display: block;
+  background: rgba(silver, 0.5);
+}
+.three:hover ~ .underline {
+  margin-left: 35%;
+  height: .25rem;
+  display: block;
+  background: rgba(silver, 0.5);
+}
+.four:hover ~ .underline {
+  margin-left: 50%;
+  height: .25rem;
+  display: block;
+  background: rgba(silver, 0.5);
+}
+.underline {
+  height: .25rem;
+  width: 5%;
+  margin: 0;
+  margin-left: 5%;
+  color: rgba(white, 0.0);
+  border: none;
+  transition: .3s ease-in-out;
+
+}

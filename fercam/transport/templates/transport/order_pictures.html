@@ -1,0 +1,11 @@
+{% if request.user.is_superuser %}
+<h1>Pictures for order number {{order_id}}</h1>
+  {% for image in images %}
+    <img src="/static/images/media/{{image.cargo_picture}}" alt="image" width="200">
+    <hr>
+  {% endfor %}
+
+{% else %}
+  <h1>Uh oh... it seems you don't have permission to see this</h1>
+
+{% endif %}
