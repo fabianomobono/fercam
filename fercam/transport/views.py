@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
 from django.urls import reverse
 import requests
@@ -21,6 +21,7 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST['login_username']
         password = request.POST['login_password']
+        print(username, password)
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
@@ -174,10 +175,17 @@ def place_order(request):
             pics.append(pic)
         print(pics)
 
-        return HttpResponseRedirect(reverse('index'))
+        return HttpResponseRedirect(reverse('order_placed', args=(order.id,)))
 
     else:
         return render(request, 'transport/new_order.html')
+
+
+# display successfully placed order
+def order_placed(request, order_id):
+    order = get_object_or_404(Order, pk=order_id)
+    images = Cargo_picture.objects.filter(order=order)
+    return render(request, 'transport/order_placed.html', {"order": order, 'images': images})
 
 
 def profile(request):
@@ -191,7 +199,7 @@ def order_details(request, order_id):
     "order": Order.objects.get(id=order_id),
     "images": Cargo_picture.objects.filter(user=request.user).filter(order=order_id)
     }
-    return render(request, 'transport/order_detail.html', context)
+    return render(request, 'transport/order_detaila.html', context)
 
 
 
@@ -209,3 +217,15 @@ def order_pictures(request, order_id):
 
 def react(request):
     return render(request, "transport/react.html")
+
+
+# contact logic...not the websocket part
+def contact(request):
+    return render(request, 'transport/contact.html')
+
+
+# get user
+def get_user(request):
+    user = str(request.user)
+    response = {'user': user}
+    return JsonResponse(response)

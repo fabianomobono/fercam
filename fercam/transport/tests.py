@@ -9,7 +9,7 @@ def file_uri(filename):
 # Create your tests here.
 class TransportTestCase(TestCase):
     def setUp(self):
-        user=User(id=1,username='123')
+        user=User(username='test')
         user.save()
         order = Order(user=user, description='this is a test',distance='1', duration='1', origin='here',destination='here', date='2020-12-12', scope='national', weight='0',size='0', price='12.12')
         order.save()
@@ -22,6 +22,6 @@ class TransportTestCase(TestCase):
 
     def test_index(self):
         c = Client()
-        response = c.get("/transport/")
+        response = c.get("")
         print(response)
         self.assertEqual(response.status_code, 200)

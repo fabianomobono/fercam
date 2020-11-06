@@ -92,13 +92,13 @@ function initMap() {
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
+  var new_york = {lat: 40.748327, lng: -73.986330};
   // The map, centered at Uluru
   // Map function(method) takes these arguments( where to put the map, {zoom and center position})
-  var map = new google.maps.Map(document.querySelector('.map'), {zoom: 4, center: uluru});
+  var map = new google.maps.Map(document.querySelector('.map'), {zoom: 4, center: new_york});
       directionsRenderer.setMap(map);
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+
   const onChangeHandler = function () {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
   };

@@ -12,8 +12,11 @@ urlpatterns = [
     path("calculate_price", views.calculate_price, name='calculate'),
     path("place_new_order", views.place_order, name='order'),
     path("profile_page", views.profile, name="profile"),
-    path("order_detail/<int:order_id>", views.order_details, name="order_details"),
+    path("order_details/<int:order_id>", views.order_details, name="order_details"),
     path("media/cargo_images/<str:picture>", views.display_picture, name="display_picture"),
     path("order_pictures/<int:order_id>", views.order_pictures, name="order_pictures"),
-    path("react", views.react, name="react")
+    path("react", views.react, name="react"),
+    path("order_placed/<int:order_id>", views.order_placed, name="order_placed"),
+    path("contact_us", views.contact , name='contact'),
+    path("get_user", views.get_user, name='get_user')
 ]

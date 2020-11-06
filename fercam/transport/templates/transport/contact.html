@@ -1,0 +1,21 @@
+{% extends 'transport/layout.html' %}
+
+{% load static %}
+
+{% block title %}
+  Contact us| We love to hear from you
+{% endblock %}
+
+{% block head %}
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="{% static 'javascript/contact.js' %}" type="text/babel"></script>
+{% endblock %}
+
+{% block body %}
+  <h1>This is your contact form</h1>
+    <div id="root" class="place_new_order_form">
+      
+    </div>
+{% endblock %}

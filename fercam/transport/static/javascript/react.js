@@ -1,63 +1,76 @@
-class Square extends React.Component {
-  render() {
-    return (
-      <button className="square btn btn-primary">
-        {this.props.value}
-      </button>
-    );
-  }
+
+
+
+const styles = {
+  fontFamily: 'sans-serif',
+  testAllign: 'center',
 }
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return <Square value={i} />;
+let id = 0;
+
+const Todo = props => (
+  <li>
+    <input type="checkbox" checked={props.todo.checked} onChange={props.onToggle}/>
+    <button onClick={props.onDelete}>Delete</button>
+    <span>{props.todo.text}</span>
+  </li>
+)
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      todos: [],
+    }
   }
 
-  render() {
-    const status = 'Next player: X';
+  addTodo() {
+    const text = prompt("Add TODO text please!")
+    if (text != null && text !== ''){
+      this.setState({
+        todos: [...this.state.todos, {key: id++, text: text, checked: false}],
+      })
+    }
+  }
 
+  removeTodo(id) {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.key !== id)
+    })
+  }
+
+  toggleTodo(id) {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+          if (todo.key !== id) return todo
+          return {
+            key: todo.key,
+            text: todo.text,
+            checked: !todo.checked,
+          }
+      })
+    })
+  }
+
+  render () {
     return (
       <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        <div> Todo count: {this.state.todos.length}</div>
+        <div> Unchecked count: {this.state.todos.filter(x => x.checked === true).length}</div>
+        <button onClick={() => this.addTodo()} >Add Todo</button>
+        <ul>
+          {this.state.todos.map(todo => <Todo
+            onToggle={() => this.toggleTodo(todo.key)}
+            onDelete={() => this.removeTodo(todo.key)}
+            todo={todo}
+            key={todo.key}/> )}
+        </ul>
       </div>
-    );
+    )
   }
 }
-
-class Game extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
-}
-
-// ========================================
 
 ReactDOM.render(
-  <Game />,
+  <App />,
   document.getElementById('root')
 );

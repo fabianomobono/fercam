@@ -110,7 +110,8 @@
   z-index: 1;
   width: 100%;
   margin: 0 auto;
-  background-color: $color6
+  background-color: $color6;
+  font-weight: bold;
 }
 .li, .ul, .one, .two, .three, .four, .register_li, #login_li, #logout_li{
   display: inline;

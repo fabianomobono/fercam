@@ -11,6 +11,7 @@
   color: white;
   width: 85%;
   margin: auto;
+
   select, .order_images, .image_upload_div, .progress_div, .international_or_not_div, .custom-control, .custom-radio, .size_and_weight, .order_date, p, .map, button[type=submit]{
     margin: 1%;
     display: block;
@@ -89,4 +90,22 @@
   border: 2px solid silver;
   font-weight: bold;
   margin: 1%;
+}
+
+
+#clickthis, #calculate_path_button{
+  display: inline;
+}
+#clickthis{
+  font-weight: bolder;
+  span {
+    font-weight: bolder;
+    font-size: 30px;
+  }
+}
+
+
+
+#location_origin, #location_destination {
+  color: white;  
 }

@@ -1,0 +1,71 @@
+@import 'base';
+
+.chat_container {
+
+  margin: auto;
+  width: 70%;
+  @extend %shadow;
+}
+
+
+.conversation_container {
+  overflow-y: scroll;
+  background-color: white;
+  width: 100%;
+  height: 200px;
+
+}
+
+.bubble_container_admin {
+  margin: 1%;
+  text-align: left;
+}
+
+.bubble_container {
+  margin: 1%;
+  text-align: right;
+
+}
+
+.bubble {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  background-color: $color2;
+  font-size: large;
+  border-radius: 20px;
+  width: content;
+  max-width: 60%;
+  text-align: left;
+}
+
+.bubble_admin {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  background-color: $adminBubbleColor;
+  font-size: large;
+  border-radius: 20px;
+  width: content;
+  max-width: 60%;
+  text-align: left;
+}
+
+.bubble_info {
+  color: silver;
+  font-size: small;
+}
+
+.Compose_message_container {
+  input[type=text] {
+    width: 80%;
+    padding: 10px;
+  }
+
+  button {
+    font-weight: bold;
+    padding: 10px;
+    width: 20%;
+    background-color: $color2;
+    border-radius: 5px;
+
+  }
+}

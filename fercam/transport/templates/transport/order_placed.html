@@ -1,0 +1,60 @@
+{% extends 'transport/layout.html' %}
+
+{% block title %}
+  Hurray! Order was placed!
+{% endblock %}
+
+{% block body %}
+
+  <div class="place_new_order_form">
+    {% if request.user == order.user %}
+    <h1>Order was placed on <br> {{order.time_order_was_placed}}</h1>
+    <h1>Order number {{order.id}} details</h1>
+      <table class="table table-dark table-striped table-hover order_table">
+        <tbody>
+          <tr>
+            <th>Origin</th>
+            <td>{{order.origin}}</td>
+          </tr>
+          <tr>
+            <th>Destination</th>
+            <td>{{order.destination}}</td>
+          </tr>
+          <tr>
+            <th>Weight</th>
+            <td>{{order.weight}}</td>
+          </tr>
+          <tr>
+            <th>Size</th>
+            <td>{{order.size}}</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>{{order.date}}</td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td>{{order.description}}</td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td>${{order.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="details_images">
+
+        {% if images %}
+          {% for image in images %}
+            <img src="/static/images/media/{{image.cargo_picture}}" alt="cargo image" width="200">
+          {% endfor %}
+        {% else %}
+          <h3>This order doesn't have any images</h3>
+        {% endif %}
+      </div>
+    {% else %}
+      <h1>This isn't your order</h1>
+    {% endif %}
+  </div>
+
+{% endblock %}

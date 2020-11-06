@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       login_form.style.display = 'block';
 
       // make the other info divs invisible
-      divs = {'login_company_link':'company_div','login_sectors_link':'sectors_div', 'login_service_link':'service_div', 'login_why_fercam_link':'why_fercam_div'}
+      divs = {'login_company_link':'company_div','login_sectors_link':'sectors_div', 'login_service_link':'service_div', 'login_why_fercam_link':'why_fercam_div', 'message': 'message'}
 
       for (const property in divs){
           document.getElementById(divs[property]).style.display = 'none';
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sign_up_form.style.display = 'block';
 
       // make the other overlapping divs invisible
-      divs = {'login_company_link':'company_div','login_sectors_link':'sectors_div', 'login_service_link':'service_div', 'login_why_fercam_link':'why_fercam_div'}
+      divs = {'login_company_link':'company_div','login_sectors_link':'sectors_div', 'login_service_link':'service_div', 'login_why_fercam_link':'why_fercam_div', 'message': 'message'}
       for (const property in divs){
           document.getElementById(divs[property]).style.display = 'none';
       }
@@ -62,7 +62,7 @@ window.addEventListener('mouseover', e => {
   var element = e.target.getAttribute("id")
 
   // this is a js object that contains all the divs that need to be considered
-  divs = {'login_company_link':'company_div','login_sectors_link':'sectors_div', 'login_service_link':'service_div', 'login_why_fercam_link':'why_fercam_div'}
+  divs = {'login_company_link':'company_div','login_sectors_link':'sectors_div', 'login_service_link':'service_div', 'login_why_fercam_link':'why_fercam_div', 'message': 'message'}
   // this is a js object that keeps track of the current showing div
   showing = {}
     if (element in divs){

@@ -1,4 +1,4 @@
-.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+.chat_container, .details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -82,10 +82,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -98,6 +101,7 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
 .c_dark {
@@ -117,6 +121,11 @@ body {
 }
 .c_dark .c_image {
   float: right;
+}
+
+.message_div_index {
+  color: white;
+  background-color: rgba(51, 51, 51, 0.4);
 }
 
 @keyframes example {
@@ -141,7 +150,7 @@ body {
   animation-duration: 4s;
 }
 
-.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+.chat_container, .details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -225,10 +234,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -241,6 +253,7 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
 /* register studd */
@@ -365,6 +378,7 @@ body {
   width: 100%;
   margin: 0 auto;
   background-color: rgba(51, 51, 51, 0.4);
+  font-weight: bold;
 }
 
 .li, .ul, .one, .two, .three, .four, .register_li, #login_li, #logout_li {
@@ -423,7 +437,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+.chat_container, .details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -507,10 +521,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -523,9 +540,10 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
-.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+.chat_container, .details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -609,10 +627,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -625,6 +646,7 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
 @keyframes example {
@@ -742,7 +764,23 @@ body {
   margin: 1%;
 }
 
-.details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
+#clickthis, #calculate_path_button {
+  display: inline;
+}
+
+#clickthis {
+  font-weight: bolder;
+}
+#clickthis span {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+#location_origin, #location_destination {
+  color: white;
+}
+
+.chat_container, .details_images, .main_profile_div .profile_picture_div #profile_picture, .main_profile_div, .c_dark {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -826,10 +864,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -842,6 +883,7 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
 .main_profile_div {
@@ -899,7 +941,7 @@ body {
   width: 95%;
 }
 
-.details_images, .c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture {
+.chat_container, .details_images, .c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -983,10 +1025,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -999,6 +1044,7 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
 .order_table {
@@ -1019,7 +1065,7 @@ body {
   margin: 1%;
 }
 
-.c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture, .details_images {
+.chat_container, .c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture, .details_images {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -1103,10 +1149,13 @@ body {
 .message {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 500px;
   background-color: rgba(51, 51, 51, 0.4);
   color: white;
   z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .logout_div {
@@ -1119,6 +1168,7 @@ body {
 .home_navbar {
   background-color: rgba(51, 51, 51, 0.4);
   width: 100%;
+  font-weight: bold;
 }
 
 .test {
@@ -1132,6 +1182,173 @@ body {
   margin: auto;
   width: auto;
   text-align: center;
+}
+
+.chat_container, .c_dark, .main_profile_div, .main_profile_div .profile_picture_div #profile_picture, .details_images {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.greeting {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+body {
+  background-image: url("/static/transport/pictures/roads.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.headline1 {
+  text-align: center;
+}
+
+/*main div */
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Navbar container */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Login dropdown */
+.vertical_line_left {
+  height: 16em;
+  border-left: 1px solid silver;
+  float: left;
+}
+
+.vertical_line_right {
+  height: 16em;
+  border-right: 1px solid silver;
+  float: right;
+}
+
+.message {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+.logout_div {
+  float: right;
+  padding: 2%;
+  font-weight: bold;
+  color: white;
+}
+
+.home_navbar {
+  background-color: rgba(51, 51, 51, 0.4);
+  width: 100%;
+  font-weight: bold;
+}
+
+.chat_container {
+  margin: auto;
+  width: 70%;
+}
+
+.conversation_container {
+  overflow-y: scroll;
+  background-color: white;
+  width: 100%;
+  height: 200px;
+}
+
+.bubble_container_admin {
+  margin: 1%;
+  text-align: left;
+}
+
+.bubble_container {
+  margin: 1%;
+  text-align: right;
+}
+
+.bubble {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  background-color: dodgerblue;
+  font-size: large;
+  border-radius: 20px;
+  width: content;
+  max-width: 60%;
+  text-align: left;
+}
+
+.bubble_admin {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  background-color: #72d986;
+  font-size: large;
+  border-radius: 20px;
+  width: content;
+  max-width: 60%;
+  text-align: left;
+}
+
+.bubble_info {
+  color: silver;
+  font-size: small;
+}
+
+.Compose_message_container input[type=text] {
+  width: 80%;
+  padding: 10px;
+}
+.Compose_message_container button {
+  font-weight: bold;
+  padding: 10px;
+  width: 20%;
+  background-color: dodgerblue;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */

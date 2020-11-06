@@ -23,8 +23,9 @@
       <ul class=ul>
         <li class="li"><a href="{% url 'home' %}">Home</a></li>
         <li class="li"><a href="{% url 'new_order_page'%}">New Order</a></li>
-        <li class="li"><a href="{% url 'profile' %}">My Profile</a></li>
+        <li class="li"><a href="{% url 'profile' %}">{{request.user|capfirst}}</a></li>
         <li class="li"><a href="{% url 'react' %}">React</a></li>
+        <li class="li"><a href="{% url 'contact' %}">Contact</a></li>
         <li id="logout_li"><div class="dropdown">
           <form class="logout_form" action="{% url 'logout' %}" method="post">
             {% csrf_token %}
