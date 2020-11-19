@@ -1,3 +1,6 @@
+@import 'animations';
+
+
 $color3: silver;
 $color4: rgba(black, 0.6);
 $color5: rgba(169, 169,169, 0.1);
@@ -5,7 +8,7 @@ $color6: rgba(#333, 0.4);
 $button_color: powderblue;
 $color:  rgba(#333, 0.4);
 $color2: dodgerblue;
-$formcolor: rgba(#222, 0.6);
+$formcolor: rgba(#333, 0.4);
 $adminBubbleColor: rgb(114,217,134);
 %shadow{
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
@@ -15,6 +18,13 @@ $adminBubbleColor: rgb(114,217,134);
   border: 2px solid white;
 }
 
+
+.main_div {
+  float: right;
+  display: inline-block;
+  width: 79.9%;
+  margin-right: -89px;
+}
 .greeting {
   text-align: center;
 }
@@ -104,4 +114,68 @@ body{
   background-color: $color6;
   width: 100%;
   font-weight: bold;
+}
+.side_bar {
+  display: inline-block;
+  width: 20%;
+  ul {
+    padding-left: 10px !important;
+    background-color: $color6;
+
+
+    li {
+
+      padding: 20px 20px 20px 5px;
+      box-sizing: border-box;
+      list-style: none;
+      border: 2px solid $color5;
+      border-top: none;
+      border-left: none;
+
+      a {
+        position: relative;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        font-weight: bolder;
+        animation-name: center_text;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+      }
+      a:after{
+        animation-name: right_text;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+      }
+    }
+    li:hover {
+      background-color: $color4;
+
+
+    }
+  }
+}
+
+
+/* Scrollbar styling */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

@@ -3,24 +3,15 @@
 
 .main_profile_div{
   float: left;
-  padding: 5%;
-  box-sizing: border-box;
+  border: 1px solid grey;
+  background-color: $formcolor;
+  padding: 20px;
   color: white;
-  background-color: $color6;
-  width: 80%;
-  margin: 10%;
-  @extend %shadow;
+  width: 85%;
+  margin-right: 0px;
   .profile_picture_div{
     float: left;
     width: 50%;
-    #profile_picture{
-      display: block;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin: 5% 5% 5% 25%;
-      @extend %shadow;
-    }
     a{
       margin-left: 5%;
       font-size: 30px;
@@ -60,4 +51,14 @@
       }
     }
   }
+}
+#profile_picture{
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 5px solid black;
+  border-radius: 50%;
+  margin: 15%;
+  margin-left: 25%;
 }

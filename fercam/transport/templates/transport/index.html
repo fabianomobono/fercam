@@ -8,45 +8,45 @@
 <div class="message_div_index">
     {% if message %}
       <h1>{{message}}</h1>
-    {% else %}
-        <h6>Hello {{user}}</h6>
     {% endif %}
 </div>
 
 
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-<ol class="carousel-indicators">
-  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-</ol>
-<div id='carousel-pic' class="carousel-inner">
-  <div class="carousel-item active c_dark">
-    <img  class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_1.jpg' %}" alt="First slide">
-    <div class="slide_text">
-      <p>We have an amazing team ready to work for you and answer all of your questions regarding your transport.</p>
-      <br>
-      <p>Our 24h customer service can assist you at any time. Call <a href="tel:+1 917-573-1234">+1 917-573-1234</a> for information</p>
+<div class="index_div">
+  <div id="carouselExampleIndicators" class="carousel slide c_size" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div id='carousel-pic' class="carousel-inner">
+    <div class="carousel-item active c_dark">
+      <img  class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_1.jpg' %}" alt="First slide">
+      <div class="slide_text c_text">
+        <p class='text_picture'>We have an amazing team ready to work for you and answer all of your questions regarding your transport.</p>
+        <br>
+        <p class='text_picture'>Our 24h customer service can assist you at any time. Call <a href="tel:+1 917-573-1234">+1 917-573-1234</a> for information</p>
+      </div>
+    </div>
+    <div class="carousel-item c_dark">
+      <img class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_2.jpg' %}" alt="Second slide">
+      <div class="slide_text c_text">
+        <p class='text_picture'>Our friendly movers will pick up all of the cargo you want to ship.</p>
+        <br>
+        <p class='text_picture'>Your movers are going to call you before the pick up to check in with you. They will also call you along the road to give you status updates.</p>
+      </div>
+    </div>
+    <div class="carousel-item c_dark">
+      <img class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_3.jpg' %}" alt="Third slide">
+      <div class="slide_text c_text">
+        <p class='text_picture'>Our state of the art trucks will ensure that your cargo will reach its destination safe and sound.</p>
+        <br>
+        <p class='text_picture'>We always deliver on time. Your absolute satisfaction is our first priority!</p>
+      </div>
     </div>
   </div>
-  <div class="carousel-item c_dark">
-    <img class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_2.jpg' %}" alt="Second slide">
-    <div class="slide_text">
-      <p>Our friendly movers will pick up all of the cargo you want to ship.</p>
-      <br>
-      <p>Your movers are going to call you before the pick up to check in with you. They will also call you along the road to give you status updates.</p>
-    </div>
-  </div>
-  <div class="carousel-item c_dark">
-    <img class="d-block w-50 c_image" src="{% static 'transport/pictures/moving_3.jpg' %}" alt="Third slide">
-    <div class="slide_text">
-      <p>Our state of the art trucks will ensure that your cargo will reach its destination safe and sound.</p>
-      <br>
-      <p>We always deliver on time. Your absolute satisfaction is our first priority!</p>
-    </div>
-  </div>
-</div>
 
+  </div>
 </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  Trip, User, Order, Driver_pay, Size_coefficient, Time_coefficient, Weight_coefficient, Distance_coefficient, Cargo_picture
+from .models import  Trip, User, Order, Driver_pay, Size_coefficient, Time_coefficient, Weight_coefficient, Distance_coefficient, Cargo_picture, Message
 import admin_thumbnails
 
 class UserAdmin(admin.ModelAdmin):
@@ -15,7 +15,7 @@ class OrderAdmin(admin.ModelAdmin):
     readonly_fields = ('id', 'time_order_was_placed')
 
 
-
+admin.site.register(Message)
 admin.site.register(Cargo_picture)
 admin.site.register(User, UserAdmin)
 admin.site.register(Order, OrderAdmin)

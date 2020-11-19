@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
 from django.urls import reverse
-import requests
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .models import User, Driver_pay, Size_coefficient, Time_coefficient, Weight_coefficient, Distance_coefficient, Order, Cargo_picture
+from django.conf import settings
+import requests
 import json
-
 
 # Create your views here.
 def index(request):
@@ -92,23 +92,37 @@ def order(request):
         pass
 
     else:
-        return render(request, "transport/new_order.html")
+        return render(request, "transport/new_order.html" , {'key': settings.API_KEY})
 
+
+# calculate path
+def calculate_path(request):
+    data = json.loads(request.body.decode("utf-8"))
+    destination = data['destination']
+    origin = data['origin']
+    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?key=' + settings.API_KEY + '&origin=' + origin + '&destination=' + destination)
+    response = json.loads(r.text)
+    return JsonResponse(response)
 
 
 # price calculator
 def calculate_price(request):
     # decode info from the request
     info = json.loads(request.body.decode("utf-8"))
+    r = requests.get("http://api.eia.gov/series/?api_key=" + settings.GAS_API + "&series_id=TOTAL.MGUCUUS.M")
+    text = json.loads(r.text)
     print(info)
-
+    print(type(text))
     # extract variables
     try:
-        price_per_gallon = float(info['gas_price'])
+        price_per_gallon = text['series'][0]['data'][0][1]
+        print(price_per_gallon)
         distance = int(info['distance'])
         duration = int(info['duration'])
         weight = abs(float(info['weight']))
         size = abs(float(info['size']))
+        if weight == 0 or size == 0:
+            return JsonResponse({"response": "Weight and size can not be 0"})
      # if not all the variables are provided
     except ValueError:
         return JsonResponse({"response": "Not all parameters were provided"})
@@ -124,6 +138,7 @@ def calculate_price(request):
     print(price_per_gallon, distance, duration, weight, size)
     price = (weight * wc) + (size * sc) + (((distance/1609) * dc) * price_per_gallon) + ((duration/3600) * float(driver_pay) * tc)
     response = {'price': round(price, 2)}
+
     return JsonResponse(response)
 
 
@@ -199,7 +214,7 @@ def order_details(request, order_id):
     "order": Order.objects.get(id=order_id),
     "images": Cargo_picture.objects.filter(user=request.user).filter(order=order_id)
     }
-    return render(request, 'transport/order_detaila.html', context)
+    return render(request, 'transport/order_details.html', context)
 
 
 

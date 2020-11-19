@@ -10,7 +10,7 @@
   padding: 20px;
   color: white;
   width: 85%;
-  margin: auto;
+  margin-right: 0px;
 
   select, .order_images, .image_upload_div, .progress_div, .international_or_not_div, .custom-control, .custom-radio, .size_and_weight, .order_date, p, .map, button[type=submit]{
     margin: 1%;
@@ -107,5 +107,5 @@
 
 
 #location_origin, #location_destination {
-  color: white;  
+  color: white;
 }

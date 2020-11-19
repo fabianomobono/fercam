@@ -1,8 +1,18 @@
 @import 'base';
 
 
+.index_div {
+  border: 1px solid grey;
+  
+  height: 528px;
+}
+
+.c_size {
+
+}
 
 .c_dark {
+  padding: 4%;
   background-color: $color6;
   @extend %shadow;
   .slide_text {
@@ -13,9 +23,12 @@
     color: white;
     width: 40%;
     font-weight: bold;
+    height: 340px;
   }
   img{
-    height: 450px;
+    padding: 2%;
+    margin-right: 5%;
+    width: 60% !important;
   }
 
   .c_image {
@@ -26,4 +39,9 @@
 .message_div_index {
   color: white;
   background-color: $color6;
+}
+
+.c_text {
+  padding: 1px !important;
+  width: 25% !important;
 }

@@ -11,17 +11,17 @@
 {% endblock %}
 
 {% block body %}
-  <h1>This is {{user}}'s  Profile page</h1>
+
   <div class="main_profile_div">
     <div class="profile_picture_div">
-      <img id="profile_picture" src="/static/transport/profile_pictures/Turtle_2.jpg" alt="Turtle">
+      <img id="profile_picture" src="/static/transport/profile_pictures/profile_pic_linkedin.jpg" alt="Turtle">
       <a href="https://www.google.com"><i class="fa fa-instagram"></i></a>
       <a href="https://www.facebook.com/{{user.first_name}}.{{user.last_name}}/"><i class="fa fa-facebook"></i></a>
       <a href="/order/1"><i class="fa fa-dribbble"></i></a>
       <a href="#"><i class="fa fa-quora"></i></a>
     </div>
     <div class="user_info_div">
-      <h1>{{user}}'s Info</h1>
+      <h1>{{user|capfirst}}'s Info</h1>
       <ul>
         <li>First Name: <span>{{user.first_name}}</span></li>
         <li>Last Name: <span>{{user.last_name}}</span></li>

@@ -18,5 +18,6 @@ urlpatterns = [
     path("react", views.react, name="react"),
     path("order_placed/<int:order_id>", views.order_placed, name="order_placed"),
     path("contact_us", views.contact , name='contact'),
-    path("get_user", views.get_user, name='get_user')
+    path("get_user", views.get_user, name='get_user'),
+    path("calculate_path", views.calculate_path, name='calculate_path'),
 ]

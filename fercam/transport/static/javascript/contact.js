@@ -6,11 +6,20 @@ request.setRequestHeader("X-CSRFToken", csrftoken);
 request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 request.onload = function () {
   const user = JSON.parse(request.responseText).user
+  const room_name = 'lobby'
+  // channels stuff
+  const chatSocket = new WebSocket(
+    'ws://' + window.location.host +
+    '/ws/chat/' + room_name + '/');
+
+  chatSocket.onclose = function(e) {
+    console.error("Socket closed unexpectedly.", e)
+  }
 
 
 
   function Convo_bubble(props){
-    if (props.user !== 'Customer Support'){
+    if (props.user === user){
 
       return(
         <div className='bubble_container'>
@@ -37,23 +46,47 @@ request.onload = function () {
     constructor(props) {
       super(props)
       this.state = {
-        messages: [{message: 'Hi, how can I help you today?', user:'Customer Support'}],
+        messages: [{message: 'Hi, how can I help you today?', user:'Support'}],
       }
+      this.addMessage = this.addMessage.bind(this);
+    }
 
+    componentDidMount(){
+      chatSocket.onmessage = (e) => {
+        const data = JSON.parse(e.data);
+        const sender = data['user']
+        var message = data['message']
+        console.log(sender)
+        if (message !== ''){
+          console.log('hello', this)
+          this.setState({
+            messages: [...this.state.messages, {message: message, user: sender}],
+          })
+          document.getElementById('message_input').value = ''
+          }
+      }
     }
 
     addMessage(){
+      console.log('line 71')
       const text = document.getElementById('message_input').value
-      this.setState({
-        messages: [...this.state.messages, {message: text, user: user}],
-      })
-      document.getElementById('message_input').value = ''
+        if (text !== ''){
+          chatSocket.send(JSON.stringify({
+              'message': text,
+              'user': user,
+          }));
+        }
+      }
+
+    checkEnter(e) {
+      if (e.key === 'Enter'){
+        this.addMessage()
+      }
     }
 
     componentDidUpdate() {
       document.getElementById('scrollto').scrollIntoView()
     }
-
     render () {
 
       return (
@@ -67,8 +100,9 @@ request.onload = function () {
             <div id='scrollto'></div>
             </div>
             <div className="Compose_message_container">
-              <input id='message_input' type='text' />
-              <button onClick={() => this.addMessage()} >Send</button>
+              <input  onKeyPress={() => this.checkEnter(event)} id='message_input' type='text' placeholder="Type your message here..."/>
+              <button id="submit_message_button" onClick={() => this.addMessage()}><i className="fa fa-send"></i></button>
+
             </div>
           </div>
         </div>
@@ -76,9 +110,13 @@ request.onload = function () {
     }
   }
 
+
   ReactDOM.render(
     <Chat_app />, document.querySelector("#root")
   )
+  // focus on the input bar
+  document.querySelector("#message_input").focus()
+
 
 }
 request.send()

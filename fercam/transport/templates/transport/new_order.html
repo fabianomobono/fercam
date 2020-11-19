@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-  <h1 class="headline1">Request a new order</h1>
+
   <form class="place_new_order_form" action="{% url 'order' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <h1>Tell us about the transport</h1>
@@ -19,7 +19,6 @@
       <input id="size_input" type="number" name="size" value="0" placeholder="Size" step="0.01" min='0' required>
       <label id="label_for_description" for="item_description">Tell us a little about what you're transporting</label><br>
       <textarea id="item_description" name="description" rows="8" cols="80" placeholder="Describe items to transport" required></textarea>
-
     </div>
     <h3>You know what? It's probably best you upload some pictures of the cargo we are goint to move for you...</h3>
     <div class="image_upload_div">
@@ -70,17 +69,14 @@
           <input id="origin_input_submit" type="text" name="origin_input_submit" value="" readonly>
           <input id="destination_input_submit" type="text" name="destination_input_submit" value="" readonly>
         </div>
-
       </div>
       <div class="map">
-
       </div>
-
     <button id="submit_order_button"  class="btn btn-primary" type="submit" name="button" disabled>You must calculate path and price before you place your order</button>
   </form>
 
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUSMxy8LIGpoatBaUKRSICiRNWEPPTHhE&libraries=places&callback=activatePlacesSearch">
+    src="https://maps.googleapis.com/maps/api/js?key={{key}}&libraries=places&callback=activatePlacesSearch">
   </script>
 
 

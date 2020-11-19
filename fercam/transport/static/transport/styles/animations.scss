@@ -15,3 +15,21 @@
   animation-name: pass;
   animation-duration: 4s;
 }
+
+
+@keyframes center_text {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 10px;
+  }
+}
+@keyframes right_text {
+  from {
+    left: 10px;
+  }
+  to {
+    left: 0px;
+  }
+}

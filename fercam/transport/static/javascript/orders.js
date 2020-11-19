@@ -1,3 +1,4 @@
+
 // autofill function
 function activatePlacesSearch(){
   // declare variables origin and destination
@@ -21,20 +22,20 @@ function calculate_path(){
   //define variables
   var origin = document.querySelector("#origin_input").value
   var destination = document.querySelector("#destination_input").value
-
+  var data = {'origin': origin, 'destination': destination}
   // the ol XML request
   request = new XMLHttpRequest();
-
-  // still need to figure out how to create my own proxy server instead of heroku
-  request.open("GET", "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?key=KEY&origin=" + origin + "&destination=" + destination, true)
-
+  const csrftoken = Cookies.get('csrftoken')
+  request.open("POST",'/calculate_path', true)
+  request.setRequestHeader("X-CSRFToken", csrftoken);
+  request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
   // what happens when the request comes back
-  request.onload = () =>{
+  request.onload = () => {
 
     // hide loader wheel
     document.querySelector(".loader").style.display = 'none';
 
-    // parse response text
+    // parse response textm
     response = JSON.parse(request.responseText)
     console.log(response)
     // if there weren't any results
@@ -75,13 +76,47 @@ function calculate_path(){
       document.querySelector("#origin_input_submit").value = origin
       document.querySelector("#destination_input_submit").value = destination
 
-      calculatePrice()
+      var distance = document.querySelector("#distance_value").value
+      var duration = document.querySelector("#duration_value").value
+      var weight = document.querySelector("#weight_input").value
+      var size = document.querySelector("#size_input").value
+      console.log(weight, size)
+      if (weight == 0 || size == 0){
+        alert("weight or size can not be 0")
+        return false
+      }
+
+      // get gas price
+
+     
+     // send price request to server
+      const csrftoken = Cookies.get('csrftoken')
+      price_request = new XMLHttpRequest()
+      price_request.open("POST", "/calculate_price", true)
+      price_request.setRequestHeader("X-CSRFToken", csrftoken);
+      price_request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+
+      // variables that are needed to send to the server
+      var info = {'distance': distance, 'duration': duration, 'weight': weight, 'size': size}
+
+      // when the response comes back from the server
+      price_request.onload = () => {
+        message = JSON.parse(price_request.responseText)
+        console.log(message)
+        document.querySelector("#span_price").innerHTML = message['price'] + "$"
+        document.querySelector("#price_value").value = message['price']
+      }
+      price_request.send(JSON.stringify(info))
+
+
       document.querySelector("#submit_order_button").removeAttribute('disabled')
       document.querySelector("#submit_order_button").innerHTML = 'Submit Order'
+
+
     }
   };
   // actually send the request
-  request.send()
+  request.send(JSON.stringify(data))
 
 }
 
@@ -160,46 +195,6 @@ function showPositionDestination(position){
   document.querySelector("#destination_input").value = position.coords.latitude + ',' + position.coords.longitude;
 }
 
-
-// function to calculate price
-function calculatePrice(){
-  // collect variables
-  var distance = document.querySelector("#distance_value").value
-  var duration = document.querySelector("#duration_value").value
-  var weight = document.querySelector("#weight_input").value
-  var size = document.querySelector("#size_input").value
-
-  // get gas price
-  disel_price = new XMLHttpRequest()
-  disel_price.open("GET", "http://api.eia.gov/series/?api_key=KEY&series_id=TOTAL.MGUCUUS.M", true)
-
-  // when gas price request comes back
-  disel_price.onload = () => {
-    // store gas price in variable
-    price_per_gallon = JSON.parse(disel_price.responseText).series['0'].data[0][1]
-
-    // send price request to server
-    const csrftoken = Cookies.get('csrftoken')
-    request = new XMLHttpRequest()
-    request.open("POST", "/calculate_price", true)
-    request.setRequestHeader("X-CSRFToken", csrftoken);
-    request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-
-    // variables that are needed to send to the server
-    var info = {'gas_price': price_per_gallon, 'distance': distance, 'duration': duration, 'weight': weight, 'size': size}
-
-    // when the response comes back from the server
-    request.onload = () => {
-      message = JSON.parse(request.responseText)
-      console.log(message)
-      document.querySelector("#span_price").innerHTML = message['price'] + "$"
-      document.querySelector("#price_value").value = message['price']
-    }
-    request.send(JSON.stringify(info))
-  }
-
-  disel_price.send()
-}
 
 var loadFile = function(event){
   document.querySelector(".order_images").innerHTML = ''
