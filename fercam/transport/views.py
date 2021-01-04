@@ -244,3 +244,6 @@ def get_user(request):
     user = str(request.user)
     response = {'user': user}
     return JsonResponse(response)
+
+
+# that's all!!!
