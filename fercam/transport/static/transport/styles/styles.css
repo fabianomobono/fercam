@@ -1506,6 +1506,50 @@ body {
   margin-left: 25%;
 }
 
+#profile_picture_in_upload_div {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.upload_profile_pic_div {
+  text-align: center;
+  position: absolute;
+  display: none;
+  width: 50%;
+  height: 50%;
+  border-radius: 16px;
+  top: 10%;
+  left: 25%;
+  background-color: whitesmoke;
+}
+.upload_profile_pic_div #upload_label {
+  display: block;
+  margin-right: auto;
+  text-align: center;
+  padding: 20px;
+  width: 50%;
+  margin-left: 80px;
+  margin: auto;
+}
+.upload_profile_pic_div #upload_label img {
+  margin: auto;
+  margin-top: 10%;
+}
+.upload_profile_pic_div #upload_label h6:hover {
+  text-decoration: underline black 3px;
+}
+
+.close {
+  background-color: whitesmoke;
+  outline: none;
+  border: none;
+  margin: 20px;
+}
+
 @keyframes example {
   from {
     color: white;

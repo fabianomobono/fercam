@@ -20,4 +20,5 @@ urlpatterns = [
     path("contact_us", views.contact , name='contact'),
     path("get_user", views.get_user, name='get_user'),
     path("calculate_path", views.calculate_path, name='calculate_path'),
+    path('upload_profile_pic', views.upload_profile_pic, name='upload_profile_pic'),
 ]

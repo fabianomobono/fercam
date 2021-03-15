@@ -100,7 +100,7 @@ def calculate_path(request):
     data = json.loads(request.body.decode("utf-8"))
     destination = data['destination']
     origin = data['origin']
-    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?key=' + settings.API_KEY + '&origin=' + origin + '&destination=' + destination)
+    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?key=' +settings.API_KEY + '&origin=' + origin + '&destination=' + destination)
     response = json.loads(r.text)
     return JsonResponse(response)
 
@@ -110,6 +110,7 @@ def calculate_price(request):
     # decode info from the request
     info = json.loads(request.body.decode("utf-8"))
     r = requests.get("http://api.eia.gov/series/?api_key=" + settings.GAS_API + "&series_id=TOTAL.MGUCUUS.M")
+    print('THis is r ', r)
     text = json.loads(r.text)
     print(info)
     print(type(text))
@@ -148,7 +149,6 @@ def place_order(request):
     if request.method == 'POST':
         # Getting order variables, try is used if to enforce variables on the server side
         try:
-            print('fuuuuuuck')
             weight = request.POST['weight']
             size = request.POST['size']
             description = request.POST['description']
@@ -171,7 +171,7 @@ def place_order(request):
             return render(request, 'transport/new_order.html', {'message': 'Not all parameters were provided'})
 
         pictures = request.FILES.getlist('order_pictures')
-        print("pictures" ,pictures)
+        print("pictures", pictures)
         if len(pictures) > 2:
             return JsonResponse({"response": "Only 2 Pictures are allowed"})
         # save new order to database
@@ -246,4 +246,10 @@ def get_user(request):
     return JsonResponse(response)
 
 
-# that's all!!!
+def upload_profile_pic(request):
+    picture = request.FILES['profile_pic']
+    user = User.objects.get(username=request.user)
+    user.profile_pic = picture
+    user.save()
+    return HttpResponseRedirect(reverse('profile'))
+    

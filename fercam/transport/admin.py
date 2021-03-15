@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import  Trip, User, Order, Driver_pay, Size_coefficient, Time_coefficient, Weight_coefficient, Distance_coefficient, Cargo_picture, Message
-import admin_thumbnails
+
 
 class UserAdmin(admin.ModelAdmin):
     readonly_fields = ['id']

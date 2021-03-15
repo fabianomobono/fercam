@@ -1,25 +1,34 @@
 {% extends 'transport/layout.html' %}
-
 {% load static %}
 {% block title %}
   {{user}}'s Profile
 {% endblock %}
 
 {% block head %}
-  <script src="{% static 'javascript/profile.js' %}">
-  </script>
+  
 {% endblock %}
 
 {% block body %}
-
+<div class='upload_profile_pic_div'>
+  <button id='close' class='close'>&#10006;</button>
+  <label id='upload_label' for="profile_pic_input"><img id="profile_picture_in_upload_div" src={{user.profile_pic.url}} alt="Turtle">
+    <h6>Choose profile picture</h6></label>
+    <button id='save_picture_button' class='btn btn-primary' disabled>Upload</button>
+ </div>
   <div class="main_profile_div">
     <div class="profile_picture_div">
-      <img id="profile_picture" src="/static/transport/profile_pictures/profile_pic_linkedin.jpg" alt="Turtle">
-      <a href="https://www.google.com"><i class="fa fa-instagram"></i></a>
+      <img id="profile_picture" src={{user.profile_pic.url}} alt="Turtle">
+      <form  action='/upload_profile_pic' method='POST' enctype="multipart/form-data" style='display: none'>
+        {% csrf_token %}
+        <input id='profile_pic_input' type='file' name='profile_pic' >
+        <input id='submit_pic' type="submit" value='upload'>
+      </form>
+     
       <a href="https://www.facebook.com/{{user.first_name}}.{{user.last_name}}/"><i class="fa fa-facebook"></i></a>
-      <a href="/order/1"><i class="fa fa-dribbble"></i></a>
+      <a href="/order/1"></a>
       <a href="#"><i class="fa fa-quora"></i></a>
     </div>
+    
     <div class="user_info_div">
       <h1>{{user|capfirst}}'s Info</h1>
       <ul>
@@ -60,4 +69,6 @@
         {% endif %}
     </div>
   </div>
+  <script src="{% static 'javascript/profile.js' %}"></script>
+  
 {% endblock %}

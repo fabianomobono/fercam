@@ -46,7 +46,7 @@
 
         {% if images %}
           {% for image in images %}
-            <img src="/static/images/media/{{image.cargo_picture}}" alt="cargo image" width="200">
+            <img src={{image.cargo_picture.url}} alt="cargo image" width="200">
           {% endfor %}
         {% else %}
           <h3>This order doesn't have any images</h3>

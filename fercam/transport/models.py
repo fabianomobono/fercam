@@ -8,6 +8,7 @@ now = date.today
 
 class User(AbstractUser):
     likes = models.IntegerField(default=0)
+    profile_pic = models.ImageField(default='profile_pics/no_profile_pic/no_pp.png', upload_to='profile_pics', blank=True)
 
 
 class Trip(models.Model):
@@ -90,16 +91,16 @@ class Time_coefficient(models.Model):
 class Cargo_picture(models.Model):
     order = models.ForeignKey("Order", on_delete=models.CASCADE, related_name="todo_picture", null=True, to_field="id")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_pictures", null=True)
-    cargo_picture = models.ImageField(upload_to="cargo_images", blank=True)
+    cargo_picture = models.ImageField(upload_to="cargo_pictures", blank=True)
 
     # so you can see an image tag instead of a link in admin
     def image_tag(self):
-        return mark_safe('<img src="/static/images/media/cargo_images/coglioni.jpg" width="150" height="150" />')
+        return mark_safe('<img src="/media/cargo_images/coglioni.jpg" width="150" height="150" />')
 
     image_tag.short_description = 'Image'
 
     def __str__(self):
-        return mark_safe(f'<img src="/static/images/media/{self.cargo_picture}" width="40" />')
+        return mark_safe(f'{self.cargo_picture}" width="40" />')
 
 
 class Message(models.Model):
