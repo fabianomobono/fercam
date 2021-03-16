@@ -75,10 +75,3 @@ class BrowserTestCase(TestCase):
         self.driver.find_element_by_id('login_password_input').send_keys('dummy_password' + Keys.ENTER)
         self.driver.implicitly_wait(3)
         self.assertEqual(self.driver.title, 'Home')
-        
-
-
-    
-    
-    
-    

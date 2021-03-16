@@ -9,3 +9,4 @@ channels_redis
 redis
 whitenoise
 python-dotenv
+dj-database-url

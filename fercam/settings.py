@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import django_heroku
 from dotenv import load_dotenv
+import sys
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,7 +35,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fercam.herokuapp.com']
+ALLOWED_HOSTS = ['fercam.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -101,8 +102,7 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
     }
 }
 
@@ -145,8 +145,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-import django_heroku
-django_heroku.settings(locals())
+import dj_database_url
+DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL_FERCAM'), conn_max_age=600, ssl_require=True)
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3")}

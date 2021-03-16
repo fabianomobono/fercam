@@ -106,4 +106,8 @@ class Cargo_picture(models.Model):
 class Message(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sender')
     message = models.TextField()
-    time = models.DateTimeField(blank=True, auto_now_add=True)
+    time = models.DateTimeField(blank=True, auto_now_add=True)\
+
+
+class Comment(models.Model):
+    text = models.TextField()
