@@ -21,7 +21,7 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST['login_username']
         password = request.POST['login_password']
-        print(username, password)
+       
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
