@@ -40,7 +40,7 @@ ALLOWED_HOSTS = ['fercam.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-
+    'channels',
     'transport',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels',
+    
 ]
 
 
