@@ -8,8 +8,10 @@ request.onload = function () {
   const user = JSON.parse(request.responseText).user
   const room_name = 'lobby'
   // channels stuff
+  var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
   const chatSocket = new WebSocket(
-    'ws://' + window.location.host +
+    ws_scheme +
+    '://' + window.location.host +
     '/ws/chat/' + room_name + '/');
 
   chatSocket.onclose = function(e) {
