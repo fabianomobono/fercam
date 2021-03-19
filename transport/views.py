@@ -100,7 +100,7 @@ def calculate_path(request):
     data = json.loads(request.body.decode("utf-8"))
     destination = data['destination']
     origin = data['origin']
-    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?key=' +settings.API_KEY + '&origin=' + origin + '&destination=' + destination)
+    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?key=' + settings.SERVER_GOOGLE_API + '&origin=' + origin + '&destination=' + destination)
     response = json.loads(r.text)
     return JsonResponse(response)
 
